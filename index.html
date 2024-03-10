@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Board</title>
+    <link rel="stylesheet" href="notion2.css">
+    <script src = "notion2.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="status-column" id="todo" ondrop="drop(event, 'todo')" ondragover="allowDrop(event)">
+            <h2>To Do <span id="todo-count"></span></h2>
+            <button onclick="openNewTaskModal('todo')">New</button>
+            <div class="task-container" id="todo-tasks">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+        </div>
+        <div class="status-column" id="in-progress" ondrop="drop(event, 'in-progress')" ondragover="allowDrop(event)">
+            <h2>In Progress <span id="in-progress-count"></span></h2>
+            <button onclick="openNewTaskModal('in-progress')">New</button>
+            <div class="task-container" id="in-progress-tasks">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+        </div>
+        <div class="status-column" id="done" ondrop="drop(event, 'done')" ondragover="allowDrop(event)">
+            <h2>Done <span id="done-count"></span></h2>
+            <button onclick="openNewTaskModal('done')">New</button>
+            <div class="task-container" id="done-tasks">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="newTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeNewTaskModal()">&times;</span>
+            <h2>New Task</h2>
+            <input type="text" id="taskTitle" placeholder="Task Title"><br><br>
+            <textarea id="taskDescription" placeholder="Task Description"></textarea><br><br>
+            <button onclick="addNewTask()">Add Task</button>
+        </div>
+    </div>
+</body>
+</html>

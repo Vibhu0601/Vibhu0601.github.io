@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Details</title>
+    <link rel="stylesheet" href="notion2.css">
+    <script src="notion2.js"></script>
+</head>
+<body>
+    <h1>Task Details</h1>
+    
+    <label for="taskTitle">Title:</label>
+    <input type="text" id="taskTitle"><br><br>
+    
+    <label for="taskDescription">Description:</label><br>
+    <textarea id="taskDescription"></textarea><br><br>
+    
+    <label for="taskStatus">Status:</label>
+    <select id="taskStatus">
+        <option value="todo">To Do</option>
+        <option value="in-progress">In Progress</option>
+        <option value="done">Done</option>
+    </select><br><br>
+    
+    <button onclick="saveTask()">Save</button>
+    <button onclick="deleteTask()">Delete</button>
+</body>
+</html>
